@@ -23,7 +23,7 @@ def ordered_correct(pairs: list[tuple[str,str]], update: list[str]) -> bool:
         update (list[str]): an update to a repair manual
 
     Returns:
-        bool: _description_
+        bool: True if the pairs are in the correct order, False otherwise
     """
     for i in pairs:
         try:
@@ -45,7 +45,7 @@ def middle_vals(updates: list[str], correct: list[bool]) -> int:
         correct (list[bool]): a list containing whether or not the updates are correct or not
 
     Returns:
-        int: _description_
+        int: The sum of the values in the middle of each correct update
     """
     pagesum = 0
     for i in range(len(updates)):
@@ -55,7 +55,8 @@ def middle_vals(updates: list[str], correct: list[bool]) -> int:
     return pagesum
 
 def main():
-
+    """Reads file, calls functions, and prints results
+    """
     with open("files/D5.txt", "r") as f:
         data = f.readlines()
     index = data.index("\n")
